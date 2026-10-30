@@ -33,3 +33,9 @@
 - Configure TypeScript diagnostics before the first implementation batch, pin the Node package manager, and declare approved lifecycle-script permissions before installation.
 - Serve and verify a valid route manifest at `/manus-routes.json` before starting the first web development server; include every implemented page route.
 - TypeScript and production builds pass; homepage and support routes respond with HTTP 200; the route manifest is valid JSON; valid scenario telemetry returns in `SIMULATION_ONLY` mode; invalid scenario identifiers are rejected with HTTP 400.
+
+## Production deployment contract — complete
+- Configure the project with `features.server: true` and a complete `deploy` declaration that points to the committed root `Dockerfile` and health path `/health`.
+- The Dockerfile must install using the pinned Node and pnpm toolchain, the committed lockfile, and the reviewed install-script policy; compile the Next.js app; and start its production listener on `0.0.0.0` using the supplied `PORT` (default 3000).
+- Provide an unauthenticated success response from `/health` for deployment readiness, without adding it as a page route in `public/manus-routes.json`.
+- Save the Dockerfile, health handler, and deployment configuration with a new checkpoint before publishing the corrected build.

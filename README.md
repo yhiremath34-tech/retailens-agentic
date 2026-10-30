@@ -18,3 +18,7 @@ Open `http://localhost:3000`. `pnpm typecheck` and `pnpm build` check the app an
 - **C — Scan dispute:** pauses a low-confidence visual/barcode mismatch before any inventory override.
 
 Everything is synthetic and local to the browser demo. No real camera, external LLM, tax authority, payment processor, supplier, POS, Firebase, or Supabase is connected; no real invoice, payment, or purchase order is created or sent.
+
+## Production container
+
+The root `Dockerfile` installs the pinned dependencies with `pnpm-lock.yaml`, builds the Next.js application, and starts the production server on `0.0.0.0` using `PORT` (3000 by default). The unauthenticated `GET /health` endpoint returns `200 ok` for deployment readiness; it is not a page route.

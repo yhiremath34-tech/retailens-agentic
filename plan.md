@@ -8,6 +8,10 @@ Implement typed scenario/agent/tool logic as reusable TypeScript modules, includ
 
 Use accessible interactions, keyboard-operable controls, responsive layouts, live status labels, and reduced-motion fallbacks. Build real camera-like vision visuals from HTML/CSS overlays and abstract 3D shapes rather than static stock imagery. Add an Architecture view with the requested Vision Pipeline → Agent Reasoning Loop → Tool Executor → HITL Intercept → Firebase/Supabase Live UI flow clearly annotated as a demo adapter, plus a Pitch view with six compact speaking-point sections (the source labels six slides but lists five topics, so the sixth adds business impact).
 
+## Production deployment contract
+
+The project already has the server capability enabled. Configure the complete `deploy` domain to use the root `Dockerfile` and unauthenticated `/health` endpoint. The Dockerfile installs with the pinned Node/pnpm toolchain and lockfile, builds Next.js, and launches its production server on `0.0.0.0` using `PORT` (default 3000). The App Router health handler is a system readiness endpoint, not a declared page route. Save these files in a new canonical `main` checkpoint before publishing.
+
 ## Project structure
 
 - `app/layout.tsx`, `app/globals.css`, `app/page.tsx`: App Router shell, typography/global visual treatment, and primary dashboard route.

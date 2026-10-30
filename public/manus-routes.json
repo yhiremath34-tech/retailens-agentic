@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "path": "/", "title": "RetaiLens Command Center" },
+    { "path": "/architecture", "title": "Agent Architecture" },
+    { "path": "/pitch", "title": "Hackathon Pitch" }
+  ]
+}
